@@ -85,8 +85,7 @@ U.plot_likelihood(lambda_line,
                   title='$N=' + str(N) + ', a=' + str(a_hat) + ', b=' + str(np.round(b_hat, 1)) + '$',
                   output_path='./outputs/step3_5/',
                   name='posterior.png',
-                  mu_truth=lambda_truth,
-                  posterior=posterior
+                  truth=lambda_truth
                   )
 
 # 予測分布の計算

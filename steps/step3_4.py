@@ -93,8 +93,7 @@ U.plot_likelihood(mu_line,
                   ', \hat{\lambda}_{\mu}=' + str(np.round(lambda_mu_hat, 3)) + '$',
                   output_path='./outputs/step3_4/',
                   name='posterior.png',
-                  mu_truth=mu_truth,
-                  posterior=posterior)
+                  truth=mu_truth)
 
 # 予測分布の計算
 lambda_star_hat = lmd * lambda_mu_hat / (lmd + lambda_mu_hat)

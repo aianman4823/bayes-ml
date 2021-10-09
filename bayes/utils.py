@@ -18,13 +18,12 @@ def plot_likelihood(x_line,
                     title='default_title',
                     output_path='../outputs/default',
                     name='default',
-                    mu_truth=None,
-                    posterior=None,
+                    truth=None,
                     true_model=None):
     fig = plt.figure(figsize=(12, 9))
     plt.plot(x_line, model, color=color)
-    if mu_truth is not None and posterior is not None:
-        plt.vlines(x=mu_truth, ymin=0, ymax=max(posterior),
+    if truth is not None:
+        plt.vlines(x=truth, ymin=0, ymax=max(model),
                    label='$\mu_{truth}$', color='red', linestyle='--')
     if true_model is not None:
         plt.plot(x_line, true_model, color='red', linestyle='--')
