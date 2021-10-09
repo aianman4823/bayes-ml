@@ -1,4 +1,5 @@
 import os
+import numpy as np
 from pathlib import Path
 import matplotlib.pyplot as plt
 
@@ -53,3 +54,11 @@ def plot_hist(x,
     my_makedirs(output_path)
     fig.savefig(output_path + name)
     pass
+
+
+def make_xline(mu, lmb, n):
+    """ガウス分布に従うと仮定しているとき"""
+    xline = np.linspace(mu - 4 * np.sqrt(1 / lmb),
+                        mu + 4 * np.sqrt(1 / lmb),
+                        num=n)
+    return xline
