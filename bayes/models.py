@@ -38,28 +38,35 @@ def log_poi(x, lumda=0.1):
     y -= lumda
     return y
 
-# ガンマ関数
+
+#  gamma分布
+def gamma_dist(x, a, b):
+    return (x ** (a - 1) * np.exp(-(x / b))) / (b**a * gamma(a))
 
 
-def gammma(x):
-    y = math.gamma(x)
-    return y
 # ベータ分布
 
 
 def beta(mu, a, b):
-    C = gammma(a + b)
-    C /= (gammma(a) * gammma(b))
+    C = gamma(a + b)
+    C /= (gamma(a) * gamma(b))
     y = C * (mu ** (a - 1))
     y *= (1 - mu) ** (b - 1)
     return y
 
 
 def log_beta(mu, a, b):
-    C = gammma(a + b)
-    C /= (gammma(a) * gammma(b))
+    C = gamma(a + b)
+    C /= (gamma(a) * gamma(b))
     log_C = np.log(C)
     y = (a - 1) * np.log(mu)
     y += (b - 1) * np.log(1 - mu)
     y += log_C
+    return y
+
+# ガンマ関数
+
+
+def gamma(x):
+    y = math.gamma(x)
     return y
