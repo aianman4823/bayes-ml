@@ -121,3 +121,30 @@ def plot_scatter_2d(x_nd,
     plt.colorbar()
     my_makedirs(output_path)
     plt.savefig(output_path + name)
+
+
+def x_vector(x_n, M):
+    x_nm = np.zeros(shape=(len(x_n), M))
+
+    for m in range(M):
+        x_nm[:, m] = np.power(x_n, m)
+    return x_nm
+
+
+def plot_linear(x_line,
+                y_line,
+                suptitle,
+                title,
+                xlabel,
+                ylabel,
+                output_path,
+                name):
+    fig = plt.figure(figsize=(12, 9))
+    plt.plot(x_line, y_line)
+    plt.suptitle(suptitle, fontsize=20)
+    plt.title(title, loc='left', fontsize=20)
+    plt.xlabel(xlabel)
+    plt.ylabel(ylabel)
+    plt.grid()
+    my_makedirs(output_path)
+    fig.savefig(output_path + name)
